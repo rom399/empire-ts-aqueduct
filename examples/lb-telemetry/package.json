@@ -1,0 +1,17 @@
+{
+  "name": "empire-ts-aqueduct-example-lb-telemetry",
+  "version": "0.0.0",
+  "private": true,
+  "description": "An Empire load balancer that publishes its telemetry to an Aqueduct queue, read by the monitoring hub.",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "empire-ts": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}

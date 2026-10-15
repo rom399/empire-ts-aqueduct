@@ -1,0 +1,15 @@
+{
+    "dbPath": "../data/telemetry.db",
+    "retentionHours": 24,
+    "broker": {
+        "pullUrl": "http://127.0.0.1:7122",
+        "queue": "lb-telemetry",
+        "pullToken": "lb-pull-token",
+        "adminToken": "lb-admin-token"
+    },
+    "server": {
+        "host": "127.0.0.1",
+        "port": 7130,
+        "webRoot": "../web/dist"
+    }
+}

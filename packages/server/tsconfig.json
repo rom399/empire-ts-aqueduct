@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "types": ["node"],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "declaration": true,
+    "rootDir": "..",
+    "paths": {
+      "empire-ts-aqueduct-core": ["../core/src/index.ts"],
+      "empire-ts-aqueduct-client": ["../client/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*", "tests/**/*", "examples/**/*", "scripts/**/*", "vitest.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

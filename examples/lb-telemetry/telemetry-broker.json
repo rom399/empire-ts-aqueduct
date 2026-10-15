@@ -1,0 +1,15 @@
+{
+    "host": "127.0.0.1",
+    "publishPort": 7121,
+    "pullPort": 7122,
+    "adminToken": "lb-admin-token",
+    "queues": {
+        "lb-telemetry": {
+            "publishToken": "lb-publish-token",
+            "pullToken": "lb-pull-token",
+            "overflow": "drop-oldest",
+            "maxSize": 20000,
+            "messageTtlMs": 3600000
+        }
+    }
+}

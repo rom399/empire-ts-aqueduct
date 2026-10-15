@@ -1,0 +1,51 @@
+{
+  "name": "empire-ts-aqueduct-core",
+  "version": "0.1.0",
+  "description": "Experimental in-memory message queue with named queues, competing consumers, optional spill-to-disk and persistence. Zero dependencies. Not a production broker.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.2.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware",
+    "examples": "tsx scripts/run-examples.ts",
+    "verify": "npm run typecheck && npm run test && npm run examples",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run verify && npm run build"
+  },
+  "keywords": [
+    "queue",
+    "message-queue",
+    "in-memory",
+    "typescript",
+    "service-bus",
+    "competing-consumers"
+  ],
+  "author": "Roman",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rom399/Empire.git",
+    "directory": "src/queue"
+  },
+  "homepage": "https://github.com/rom399/Empire#readme",
+  "bugs": {
+    "url": "https://github.com/rom399/Empire/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "oxlint": "^1.83.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

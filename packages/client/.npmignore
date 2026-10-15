@@ -1,0 +1,12 @@
+# Test files
+tests/
+
+# Examples
+
+# TypeScript source (publish compiled JS only)
+src/
+
+# Config
+tsconfig.json
+tsconfig.build.json
+.oxlintrc.json

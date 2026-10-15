@@ -1,0 +1,41 @@
+{
+  "name": "empire-ts-monitoring",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Telemetry hub for Empire: a processor that drains a queue broker into SQLite, a web server with a small query API, and a React dashboard. Experimental.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "empire-ts-monitoring": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware",
+    "start": "tsx src/cli.ts all --config config/hub.example.json",
+    "setup": "npm install --legacy-peer-deps && npm --prefix ../server install --legacy-peer-deps && npm --prefix ../../examples/lb-telemetry install && npm run web:install && npm run web:build",
+    "demo": "tsx scripts/demo.ts",
+    "web:install": "npm --prefix web install --legacy-peer-deps",
+    "web:build": "npm --prefix web run build",
+    "build": "tsc -p tsconfig.build.json",
+    "verify": "npm run typecheck && npm run test"
+  },
+  "author": "Roman",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "empire-ts": "^0.1.4",
+    "empire-ts-aqueduct-client": "file:../client"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "oxlint": "^1.83.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

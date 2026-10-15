@@ -1,0 +1,61 @@
+{
+  "name": "empire-ts-aqueduct",
+  "version": "0.1.0",
+  "description": "Experimental queue broker hosted on Empire: a publish port and a pull port over named in-memory queues, with optional spill-to-disk and persistence. Not a production broker.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "empire-ts-aqueduct": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.2.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware",
+    "examples": "tsx scripts/run-examples.ts",
+    "verify": "npm run typecheck && npm run test && npm run examples",
+    "build": "tsc -p tsconfig.build.json",
+    "check-publishable": "tsx scripts/checkPublishable.ts",
+    "prepublishOnly": "npm run check-publishable && npm run verify && npm run build"
+  },
+  "keywords": [
+    "queue",
+    "message-queue",
+    "broker",
+    "in-memory",
+    "typescript",
+    "empire",
+    "service-bus"
+  ],
+  "author": "Roman",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rom399/Empire.git",
+    "directory": "src/queue-server"
+  },
+  "homepage": "https://github.com/rom399/Empire#readme",
+  "bugs": {
+    "url": "https://github.com/rom399/Empire/issues"
+  },
+  "dependencies": {
+    "empire-ts": "^0.1.4",
+    "empire-ts-aqueduct-core": "file:../core"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "empire-ts-aqueduct-client": "file:../client",
+    "oxlint": "^1.83.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

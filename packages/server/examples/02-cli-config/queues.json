@@ -1,0 +1,24 @@
+{
+    "host": "127.0.0.1",
+    "publishPort": 7201,
+    "pullPort": 7202,
+    "adminToken": { "env": "QUEUE_ADMIN_TOKEN" },
+    "spillRoot": "./queue-data",
+    "queues": {
+        "telemetry": {
+            "publishToken": { "env": "TELEMETRY_PUBLISH_TOKEN" },
+            "pullToken": { "env": "TELEMETRY_PULL_TOKEN" },
+            "overflow": "spill",
+            "maxSize": 10000,
+            "maxSpillFiles": 50,
+            "messageTtlMs": 7200000,
+            "persist": true
+        },
+        "jobs": {
+            "publishToken": { "env": "JOBS_PUBLISH_TOKEN" },
+            "pullToken": { "env": "JOBS_PULL_TOKEN" },
+            "overflow": "reject",
+            "maxSize": 1000
+        }
+    }
+}

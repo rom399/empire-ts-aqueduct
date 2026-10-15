@@ -1,0 +1,50 @@
+{
+  "name": "empire-ts-aqueduct-client",
+  "version": "0.1.0",
+  "description": "Consumer client for the Empire queue broker: take batches, acknowledge receipt, process with a concurrency limit. Zero dependencies, uses built-in fetch. Experimental.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.2.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware",
+    "verify": "npm run typecheck && npm run test",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run verify && npm run build"
+  },
+  "keywords": [
+    "queue",
+    "message-queue",
+    "consumer",
+    "client",
+    "typescript",
+    "empire"
+  ],
+  "author": "Roman",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rom399/Empire.git",
+    "directory": "src/queue-client"
+  },
+  "homepage": "https://github.com/rom399/Empire#readme",
+  "bugs": {
+    "url": "https://github.com/rom399/Empire/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "oxlint": "^1.83.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}
